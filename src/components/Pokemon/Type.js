@@ -4,7 +4,6 @@ import { capitalize, map } from "lodash";
 import getPokeColor from "../../utils/getPokeColor";
 
 const Type = ({ types }) => {
-  console.log(types);
   return (
     <View style={styles.content}>
       {map(types, (item, index) => (

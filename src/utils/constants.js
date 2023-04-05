@@ -20,3 +20,15 @@ export const POKEMON_TYPE_COLORS = {
   dark: "#705848",
   fairy: "#EE99AC",
 };
+
+export const USER = {
+  username: "samu",
+  password: "2684",
+};
+
+export const USER_DETAILS = {
+  username: "samu",
+  firstName: "Samuel",
+  lastName: "Montoya",
+  email: "samu7montoya@gmail.com",
+};
