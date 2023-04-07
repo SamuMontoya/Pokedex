@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   content: {
     paddingHorizontal: 20,
     marginTop: 40,
+    marginBottom: 40,
   },
   block: {
     flexDirection: "row",

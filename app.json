@@ -4,10 +4,10 @@
     "slug": "pokedex-platzi",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/pokedex-icon.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/pokedex-icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,12 +19,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/pokedex-icon.png",
+        "foregroundImage": "./assets/adaptative-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.samumontoya.pokedexplatzi"
     },
     "web": {
-      "favicon": "./src/assets/pokedex-icon.png"
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "65fcaa97-284e-4010-8d7d-5524d564d25b"
+      }
     }
   }
 }

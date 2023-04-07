@@ -8,12 +8,16 @@ import {
   Image,
 } from "react-native";
 import React, { useState } from "react";
+
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { USER, USER_DETAILS } from "../../utils/constants";
 
+import useAuth from "../../hooks/useAuth";
+
 const LoginForm = () => {
   const [error, setError] = useState("");
+  const { login } = useAuth();
 
   const formik = useFormik({
     initialValues: initialValues(),
@@ -24,7 +28,7 @@ const LoginForm = () => {
       if (username !== USER.username || password !== USER.password) {
         setError("Username or Password are incorrect");
       } else {
-        console.log(USER_DETAILS);
+        login(USER_DETAILS);
       }
     },
   });
@@ -102,7 +106,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 5,
     borderRadius: 50,
-    marginTop: 20,
+    marginTop: 130,
     width: 100,
     alignContent: "center",
     alignSelf: "center",

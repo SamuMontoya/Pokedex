@@ -6,13 +6,15 @@ import Header from "../components/Pokemon/Header";
 import Type from "../components/Pokemon/Type";
 import Stats from "../components/Pokemon/Stats";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import Favorite from "../components/Pokemon/Favorite";
+import useAuth from "../hooks/useAuth";
 
 const Pokemon = ({ navigation, route: { params } }) => {
   const [pokemon, setPokemon] = useState(null);
+  const { auth } = useAuth();
 
   useEffect(() => {
     navigation.setOptions({
-      headerRight: () => null,
       headerLeft: () => (
         <Icon
           name="arrow-left"
@@ -35,6 +37,13 @@ const Pokemon = ({ navigation, route: { params } }) => {
       }
     })();
   }, [params]);
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerRight: () =>
+        auth && pokemon ? <Favorite id={pokemon.id} /> : null,
+    });
+  }, [auth, pokemon]);
 
   if (!pokemon)
     return (
